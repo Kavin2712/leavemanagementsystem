@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department and Year Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Center the form */
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script>
+        function redirectToPage(pageURL) {
+            // Get the selected department and year values
+            var department = document.getElementById("department").value;
+            var year = document.getElementById("year").value;
+
+            // Construct the URL with parameters and redirect
+            var redirectURL = pageURL + "?department=" + department + "&year=" + year;
+            window.location.href = redirectURL;
+        }
+    </script>
+</head>
+<body>
+    <h1>Department and Year Selection</h1>
+    <div id="container">
+        <form id="selectionForm" action="process_selection.php" method="POST">
+            <label for="department">Select Department:</label>
+            <select id="department" name="department" required>
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+                <option value="AIDS">AIDS</option>
+                <option value="MECH">MECH</option>
+                <option value="ECE">ECE</option>
+                <option value="CIVIL">CIVIL</option>
+            </select>
+
+            <label for="year">Select Year:</label>
+            <select id="year" name="year" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <button type="button" onclick="redirectToPage('6.html')">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

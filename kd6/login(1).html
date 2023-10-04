@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="password"] {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        select {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style the italic words */
+        .italic-text {
+            font-style: italic;
+        }
+
+        /* Style the error message in red */
+        #error {
+            color: red;
+        }
+    </style>
+    <script>
+        function login() {
+            // Get user input
+            const name = document.getElementById("name").value;
+            const dob = document.getElementById("dob").value;
+            const password = document.getElementById("password").value;
+
+            // Replace these with your valid credentials
+            const validName = "kavin";
+            const validDOB = "2003-12-27";
+            const validPassword = "kavin123";
+
+            // Check if the entered credentials match the valid credentials
+            if (
+                name === validName &&
+                dob === validDOB &&
+                password === validPassword
+            ) {
+                // Redirect to department and year selection
+                window.location.href = "dep.html";
+            } else {
+                // Display an error message
+                document.getElementById("error").textContent = "Invalid credentials. Please try again.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form id="loginForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+</body>
+</html>
